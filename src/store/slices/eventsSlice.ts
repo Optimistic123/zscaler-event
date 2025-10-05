@@ -5,11 +5,16 @@ import type { Event } from '../../types/Event';
 export const loadEvents = createAsyncThunk(
   'events/loadEvents',
   async () => {
-    const response = await fetch('/Data.json');
+    const url = `${import.meta.env.BASE_URL}Data.json`;
+    const response = await fetch(url, { cache: 'no-store' });
     if (!response.ok) {
-      throw new Error('Failed to load events');
+      throw new Error(`Failed to load events (${response.status} ${response.statusText})`);
     }
     const data = await response.json();
+    if (!Array.isArray(data)) {
+      throw new Error('Invalid events payload: expected an array');
+    }
+    console.info('[eventsSlice] Loaded events count =', data.length);
     return data as Event[];
   }
 );
