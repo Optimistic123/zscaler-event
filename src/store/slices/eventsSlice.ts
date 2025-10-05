@@ -100,6 +100,7 @@ export const selectTimeSeriesDataHighcharts = createSelector(
     const dataMap = new Map<number, number>();
     filteredEvents.forEach(event => {
       const date = new Date(event.timestamp);
+      console.log("date:", date);
       const hour = new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours()).getTime();
       dataMap.set(hour, (dataMap.get(hour) || 0) + 1);
     });
