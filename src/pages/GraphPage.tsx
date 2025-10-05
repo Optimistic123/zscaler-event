@@ -68,6 +68,8 @@ const GraphPage = () => {
               showTimeSelect
               dateFormat="yyyy-MM-dd HH:mm"
               className="date-picker"
+              minDate={new Date('2021-07-26')}
+              maxDate={new Date('2021-08-25')}
             />
           </div>
           <div className="date-input-group">
@@ -78,6 +80,8 @@ const GraphPage = () => {
               showTimeSelect
               dateFormat="yyyy-MM-dd HH:mm"
               className="date-picker"
+              minDate={new Date('2021-07-26')}
+              maxDate={new Date('2021-08-25')}
             />
           </div>
         </div>

@@ -24,8 +24,8 @@ interface EventsState {
 
 const initialState: EventsState = {
   events: [],
-  startDate: new Date('2021-08-06'),
-  endDate: new Date('2021-08-24'),
+  startDate: new Date('2021-07-26'),
+  endDate: new Date('2021-08-25'),
   loading: false,
   error: null,
 };
